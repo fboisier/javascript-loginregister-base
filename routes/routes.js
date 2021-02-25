@@ -35,7 +35,7 @@ router.get("/", [checkLogin ] , (req,res) => {
 
 
 
-    res.render("usuario.ejs",{ errors, mensajes})
+    res.render("usuariopro.ejs",{ errors, mensajes})
 });
 
 
@@ -45,7 +45,16 @@ router.get("/admin", [checkLogin, checkAdmin ] , (req,res) => {
     const errors = req.flash("errors");
     const mensajes = req.flash("mensajes");
 
-    res.render("admin.ejs",{ errors, mensajes })
+    res.render("adminpro.ejs",{ errors, mensajes })
+});
+
+router.get("/prueba", [checkLogin], (req,res) => {
+
+
+    const errors = req.flash("errors");
+    const mensajes = req.flash("mensajes");
+
+    res.render("pruebapro.ejs",{ errors, mensajes })
 });
 
 module.exports = router;
